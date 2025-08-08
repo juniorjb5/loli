@@ -206,43 +206,6 @@
 
 
 	
-	/* Evitar que el banner tape el texto en móvil */
-@media (max-width: 768px) {
-  /* Asegura que el banner no se superponga */
-  .banner {
-    position: relative !important;
-    z-index: 1 !important;
-    margin-bottom: 50rem !important; /* espacio debajo del banner */
-  }
-
-  /* Cancela el "overlap" que trae el theme en la sección siguiente */
-  .banner + .wrapper,
-  .banner + section,
-  .wrapper {
-    margin-top: 0 !important;
-  }
-
-  /* Si el theme usa clases por estilo, cúbrelas también */
-  .wrapper.style1,
-  .wrapper.style2,
-  .wrapper.style3 {
-    margin-top: 0 !important;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -298,6 +261,37 @@
   .music-btn { width: 50px; height: 50px; right: .75rem; bottom: .75rem; }
   .music-icon { font-size: 18px; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1017,48 +1017,6 @@
 	
 	
 	
-	
-	
-/* ====== FORZAR BANNER FULL-HEIGHT EN MÓVIL ====== */
-@media (max-width: 768px) {
-  /* Quita paddings que achican el banner */
-  .banner { 
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    min-height: 100vh !important;
-  }
-
-  /* Si la imagen está como <img> dentro de .image */
-  .banner .image,
-  .banner .image img {
-    width: 100% !important;
-    height: 100vh !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    object-position: top center !important; /* evita “mochos” */
-    display: block !important;
-  }
-
-  /* Si la imagen está como background (HTML5UP-style) */
-  .banner .image.fill {
-    min-height: 100vh !important;
-    background-size: cover !important;
-    background-position: top center !important;
-  }
-
-  /* Evita que otras reglas de .image del theme limiten la altura */
-  .image img {
-    max-width: 100% !important;
-    max-height: none !important;
-  }
-
-  /* Asegura que el contenedor no la estrangule */
-  .banner .content, 
-  .banner .image {
-    flex: 1 1 100% !important;
-  }
-}
-
 
 
 
