@@ -3,7 +3,7 @@
     "path": "C:/Users/JuniorJ/OneDrive - correounivalle.edu.co/Matri/Invitacion/data/banner.yml",
     "project_path": "data/banner.yml",
     "type": "yaml",
-    "hash": "1065014963",
+    "hash": "2984381105",
     "contents": "",
     "dirty": false,
     "created": 1754613069328.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "8,22",
+        "cursorPosition": "11,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1754615031,
+    "lastKnownWriteTime": 1754616766,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1754615031020,
+    "last_content_update": 1754616766977,
     "read_only": false,
     "read_only_alternatives": []
 }

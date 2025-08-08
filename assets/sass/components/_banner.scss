@@ -991,26 +991,76 @@
 	@include color-banner;
 	
 	
-	/* Ajustes de banner para que la imagen ocupe más alto y no corte la cabeza */
-.banner {
-  min-height: 100vh; /* ocupa toda la altura de pantalla */
-  display: flex;
-  align-items: center;
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/* ====== FORZAR BANNER FULL-HEIGHT EN MÓVIL ====== */
+@media (max-width: 768px) {
+  /* Quita paddings que achican el banner */
+  .banner { 
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    min-height: 100vh !important;
+  }
 
-.banner .image,
-.banner .image img {
-  width: 100%;
-  height: 100vh;          /* altura del banner */
-  object-fit: cover;      /* recorta sin deformar */
-  object-position: center top; /* mueve el recorte hacia arriba (evita “mochos”) */
-}
-
-/* En móviles puedes bajar un poquito la altura si quieres */
-@media (max-width: 736px) {
-  .banner,
+  /* Si la imagen está como <img> dentro de .image */
   .banner .image,
   .banner .image img {
-    height: 90vh;
+    width: 100% !important;
+    height: 100vh !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: top center !important; /* evita “mochos” */
+    display: block !important;
+  }
+
+  /* Si la imagen está como background (HTML5UP-style) */
+  .banner .image.fill {
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: top center !important;
+  }
+
+  /* Evita que otras reglas de .image del theme limiten la altura */
+  .image img {
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  /* Asegura que el contenedor no la estrangule */
+  .banner .content, 
+  .banner .image {
+    flex: 1 1 100% !important;
   }
 }
+
+
+
+
+
+
