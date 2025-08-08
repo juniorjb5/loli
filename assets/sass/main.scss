@@ -286,6 +286,11 @@
 
 
 
+/* Forzar negrilla en spotlight */
+.spotlight strong,
+.spotlight b {
+  font-weight: 700 !important; /* fuerza peso de negrilla */
+}
 
 
 
@@ -298,7 +303,98 @@
 
 
 
+/* ===== Itinerario vertical ===== */
+/* ===== Itinerario centrado con línea al medio ===== */
+.timeline-center {
+  max-width: 720px;          /* ancho cómodo */
+  margin: 0 auto;            /* centra el bloque */
+  position: relative;
+  padding: 0 1rem 1rem;
+  text-align: center;
+}
 
+/* Línea vertical al centro del bloque, recorre todo el listado */
+.timeline-center::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10rem;              /* baja un poco para no tocar el título */
+  bottom: 5rem;
+  width: 1px;
+  background: #8a9b7a55;     /* verde suave translúcido */
+  transform: translateX(-0.5px);
+}
 
+.tl-list { list-style: none; margin: 2rem 0 0; padding: 0; }
+
+/* Cada fila: dos mitades alrededor de la línea central */
+.tl-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* izquierda | derecha */
+  align-items: center;
+  gap: 0;                         /* la separación la damos con padding */
+  padding: 1.25rem 0;
+}
+
+/* Izquierda: icono pegado a la línea (alineado a la derecha) */
+.tl-left {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 28px;           /* distancia hasta la línea */
+}
+.tl-icon {
+  width: 44px; height: 44px; object-fit: contain;
+  filter: grayscale(100%);
+  opacity: .95;
+}
+
+/* Derecha: texto pegado a la línea (alineado a la izquierda) */
+.tl-right {
+  text-align: left;
+  padding-left: 28px;            /* distancia desde la línea */
+}
+.tl-label {
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: #394a2f;                /* verde elegante */
+  margin-bottom: .25rem;
+}
+.tl-time { opacity: .85; }
+
+/* Responsive */
+@media (max-width: 736px) {
+  .timeline-center { max-width: 92vw; }
+  .timeline-center::before { /* ... */  }
+  .tl-icon { width: 40px; height: 40px; }
+  .tl-row { padding: 1rem 0; }
+  .tl-label { font-size: 1.05rem; }
+  .tl-time  { font-size: .95rem; }
+}
+
+/* Puntito en el centro de cada tramo */
+.tl-row {
+  position: relative;
+}
+.tl-row::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;               /* diámetro del punto */
+  height: 10px;
+  background: #394a2f;       /* verde oscuro */
+  border: 3px solid #ffffff; /* borde blanco para contraste */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px #8a9b7a55; /* aro sutil */
+}
+
+/* (Opcional) puntitos más pequeños en mobile */
+@media (max-width: 736px) {
+  .tl-row::after { width: 8px; height: 8px; border-width: 2px; }
+}
+
+/* (Opcional) efecto suave al pasar el mouse */
+.tl-row:hover::after { box-shadow: 0 0 0 2px #8a9b7a88; }
 
 
