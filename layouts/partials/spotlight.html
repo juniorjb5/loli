@@ -1,20 +1,31 @@
 <section class="spotlight {{ .style }}"{{ with .id }} id="{{ . }}"{{ end }}>
   <div class="content">
     {{ with .title }}<h2>{{ . }}</h2>{{ end }}
-    {{ with .content | markdownify }}<p>{{ . | safeHTML }}</p>{{ end }}
+
+    {{ with .content | markdownify }}{{ . | safeHTML }}{{ end }}
 
     {{ if .icon }}
       <div class="spotlight-icon">
-        <img src="{{ .icon | relURL }}" alt="Código de vestimenta">
+        <img src="{{ .icon | relURL }}" alt="">
         {{ with .dressnote }}
           <p class="dress-note">{{ . | markdownify }}</p>
         {{ end }}
       </div>
     {{ end }}
+
+    {{ with .button }}
+      {{ if and .label .link }}
+        <ul class="actions stacked">
+          <li><a href="{{ .link }}" class="button">{{ .label }}</a></li>
+        </ul>
+      {{ end }}
+    {{ end }}
   </div>
 
-  {{ with .image }}<div class="image">
-    <img src="{{ . }}" alt="" />
-  </div>{{ end }}
+  {{ with .image }}
+    <div class="image">
+      <img src="{{ . }}" alt="">
+    </div>
+  {{ end }}
 </section>
 

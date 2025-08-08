@@ -1,6 +1,6 @@
 <section id="itinerario" class="wrapper style1">
   <div class="inner timeline-center">
-    <h2>Itinerario</h2>
+    <h2>{{ with .Site.Data.itinerario.title }}{{ . }}{{ else }}Itinerario{{ end }}</h2>
     <ul class="tl-list">
       {{ range .Site.Data.itinerario.items }}
       <li class="tl-row">
