@@ -4,9 +4,8 @@ title : "Oriana & Orlando"
 subtitle: |
   ¡Nos casamos! Un festival de amor caleño con sabor peruano.
 content : |
-  This is a <strong>Banner</strong> element, and it's generally used as an introduction or opening statement. You can customize its <span class="demo-controls">appearance with a number of modifiers</span>, as well as assign it an optional <code>onload</code> or <code>onscroll</code> transition modifier (<a href="#reference-banner">details</a>).
+  Queremos compartir contigo nuestro día especial que celebraremos el próximo.
 button:
-  label : "Get Started"
-  link : "#first"
+  label : "26.12.2025"
 image : "images/gallery/matri/15.jpeg"
 
