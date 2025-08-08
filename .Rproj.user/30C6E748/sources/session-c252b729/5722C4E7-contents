@@ -272,6 +272,13 @@
 
 
 
+/* Botón decorativo en banner */
+.banner .button {
+  pointer-events: none;      /* desactiva clic */
+  cursor: default;           /* cursor normal */
+  text-decoration: none;
+  font-size: 2rem;          /* agranda el texto */
+}
 
 
 
