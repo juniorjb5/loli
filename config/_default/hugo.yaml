@@ -1,0 +1,10 @@
+theme: hugo-story
+relativeURLs: 'true'
+baseURL: /
+publishDir: public
+disableKinds:
+  - taxonomy
+  - section
+Params:
+  asset: {}
+  social: {}
