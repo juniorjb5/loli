@@ -4,12 +4,12 @@ library(blogdown)
 
 
 # Crear un nuevo sitio con el theme Hugo Story
-new_site(
-  theme = "caressofsteel/hugo-story", # Repo del theme en GitHub
-  theme_example = TRUE,  # Importa el contenido de ejemplo del theme
-  empty_dirs = TRUE,
-  sample = FALSE         # Evita que blogdown ponga su ejemplo por defecto
-)
+# new_site(
+#   theme = "caressofsteel/hugo-story", # Repo del theme en GitHub
+#   theme_example = TRUE,  # Importa el contenido de ejemplo del theme
+#   empty_dirs = TRUE,
+#   sample = FALSE         # Evita que blogdown ponga su ejemplo por defecto
+# )
 
 
 # Levantar el servidor local para ver la página
@@ -20,10 +20,9 @@ stop_server()
 
 git add .
 
-git commit -m "Act.07.08.2025_11"
+git commit -m "Act.08.08.2025_14"
 
 git push origin main
-
 
 
 

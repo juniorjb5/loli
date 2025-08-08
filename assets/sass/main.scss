@@ -500,3 +500,115 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  text-align: left;
+}
+.faq-item {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  padding: .75rem 1rem;
+  background: rgba(0,0,0,.02);
+  margin-bottom: .75rem;
+}
+.faq-q {
+  cursor: pointer;
+  font-weight: normal;
+  letter-spacing: .02em;
+  list-style: none;
+  color: #666; /* gris claro, elegante */
+}
+
+.faq-item[open] { background: rgba(0,0,0,.03); }
+.faq-a { margin-top: .5rem; opacity: .95; }
+
+/* Quitar triángulo por defecto y poner un iconito +/− */
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::before {
+  content: "+";
+  margin-right: .5rem;
+  font-weight: 700;
+}
+.faq-item[open] > .faq-q::before { content: "−"; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* capa de fondo difuminado que llena el viewport */
+#final-photo.final-photo-blur {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0;
+}
+#final-photo.final-photo-blur::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: url("images/gallery/matri/foto-final.jpg") center / cover no-repeat;
+  filter: blur(16px) brightness(.9);
+  transform: scale(1.1);            /* evita bordes del blur */
+}
+/* foto principal centrada y SIN recorte */
+#final-photo.final-photo-blur .main {
+  position: relative;               /* encima del blur */
+  display: block;
+  margin: 0 auto;
+  max-height: 100vh;
+  max-width: 92vw;                  /* un pelín de margen lateral */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  border-radius: 8px;                /* opcional, para que luzca “impresa” */
+}
+

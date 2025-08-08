@@ -1,0 +1,15 @@
+<section id="faq" class="wrapper style1 align-center">
+  <div class="inner">
+    <h2>{{ with .Site.Data.faq.title }}{{ . }}{{ else }}Preguntas frecuentes{{ end }}</h2>
+    {{ with .Site.Data.faq.intro }}<p>{{ . | markdownify }}</p>{{ end }}
+
+    <div class="faq-list">
+      {{ range .Site.Data.faq.items }}
+      <details class="faq-item">
+        <summary class="faq-q">{{ .q | markdownify }}</summary>
+        <div class="faq-a">{{ .a | markdownify }}</div>
+      </details>
+      {{ end }}
+    </div>
+  </div>
+</section>
