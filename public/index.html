@@ -2897,5 +2897,50 @@ print 'It took ' + i + ' iterations to sort the deck.';
 
 
 
+    <audio id="song" src="./audio/cancion.mp3" preload="auto" autoplay muted loop></audio>
+
+<button id="music-toggle" aria-label="Reproducir música" class="music-btn" type="button">
+  <span class="music-icon" aria-hidden="true">♪</span>
+</button>
+
+<script>
+(function () {
+  const audio = document.getElementById('song');
+  const btn = document.getElementById('music-toggle');
+
+  function setState(playing) {
+    btn.classList.toggle('playing', playing);
+    btn.setAttribute('aria-label', playing ? 'Pausar música' : 'Reproducir música');
+  }
+
+  
+  function enableSoundOnce() {
+    audio.muted = false;
+    audio.play().then(() => setState(true)).catch(()=>{});
+    document.removeEventListener('click', enableSoundOnce, { capture: true });
+    document.removeEventListener('touchstart', enableSoundOnce, { capture: true });
+  }
+  document.addEventListener('click', enableSoundOnce, { capture: true, once: true });
+  document.addEventListener('touchstart', enableSoundOnce, { capture: true, once: true });
+
+  
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (audio.paused) {
+      audio.muted = false;
+      audio.play().then(() => setState(true)).catch(()=>{});
+    } else {
+      audio.pause();
+      setState(false);
+    }
+  });
+
+  
+  audio.addEventListener('play', () => setState(true));
+  audio.addEventListener('pause', () => setState(false));
+})();
+</script>
+
+
 	</body>
 </html>

@@ -3,7 +3,7 @@
     "path": "C:/Users/JuniorJ/OneDrive - correounivalle.edu.co/Matri/Invitacion/assets/sass/main.scss",
     "project_path": "assets/sass/main.scss",
     "type": "scss",
-    "hash": "4026505501",
+    "hash": "3836501334",
     "contents": "",
     "dirty": false,
     "created": 1754616409166.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "195,20",
-        "scrollLine": "174"
+        "cursorPosition": "300,0",
+        "scrollLine": "259"
     },
     "folds": "",
-    "lastKnownWriteTime": 1754616460,
+    "lastKnownWriteTime": 1754617191,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1754616460505,
+    "last_content_update": 1754617191491,
     "read_only": false,
     "read_only_alternatives": []
 }
