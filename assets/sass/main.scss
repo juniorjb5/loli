@@ -463,3 +463,40 @@
 }
 
 
+
+
+
+
+
+
+
+.divider-icon {
+  text-align: center;
+  margin: 30px 0; /* margen arriba y abajo */
+}
+
+.divider-icon img {
+  width: 80px;
+  height: auto;
+  display: inline-block;
+}
+
+.index.align-left:nth-of-type(2) {
+  margin-top: 5px; /* ajusta el valor a tu gusto */
+}
+
+
+
+
+
+
+
+#first img[alt="Regalo"] {
+  display: block;
+  margin: 15px auto 0; /* Centrado y espacio arriba */
+  width: 60px; /* Ajusta el tamaño */
+  height: auto;
+}
+
+
+
