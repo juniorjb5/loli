@@ -319,7 +319,7 @@
   position: absolute;
   left: 50%;
   top: 10rem;              /* baja un poco para no tocar el título */
-  bottom: 5rem;
+  bottom: 2rem;
   width: 1px;
   background: #8a9b7a55;     /* verde suave translúcido */
   transform: translateX(-0.5px);
@@ -396,5 +396,70 @@
 
 /* (Opcional) efecto suave al pasar el mouse */
 .tl-row:hover::after { box-shadow: 0 0 0 2px #8a9b7a88; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.spotlight-icon {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.spotlight-icon img {
+  width: 72px;      /* puedes ajustar */
+  height: 72px;
+  opacity: 0.95;
+}
+
+
+/* Nota de vestuario (pastilla) */
+.dress-note {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem .75rem;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 999px;
+  background: rgba(0,0,0,.03);
+  font-size: .98rem;
+  line-height: 1.25;
+  margin-top: .75rem;
+}
+.dress-ico {
+  font-size: 1.05rem;  /* puedes subir a 1.2rem */
+  line-height: 1;
+}
+
+/* Si usas modo oscuro/imagen oscura en esa sección, invierte colores */
+.spotlight .content .dress-note {
+  color: inherit;
+  border-color: rgba(0,0,0,.12);
+  background: rgba(0,0,0,.04);
+}
+
+
+.spotlight-icon {
+  display: flex;
+  flex-direction: column; /* apila icono y texto en vertical */
+  align-items: center; /* centra horizontalmente */
+}
+
+.spotlight-icon img {
+  margin-bottom: 0.5em; /* espacio entre icono y texto */
+}
 
 
