@@ -612,3 +612,160 @@
   border-radius: 8px;                /* opcional, para que luzca “impresa” */
 }
 
+
+
+
+
+
+
+/* Base del sitio */
+html, body {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Títulos románticos con Monsieur La Doulaise (solo tiene un peso) */
+h1, h2, .nombres-romanticos {
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-weight: 400;
+  letter-spacing: .1px;     /* esta caligrafía ya es amplia */
+  line-height: 1.05;
+}
+
+/* Tamaños sugeridos */
+h1 { font-size: clamp(60px, 7.5vw, 86px); }
+h2 { font-size: clamp(50px, 5.5vw, 52px); }
+
+/* Jerarquía de texto con Cormorant Garamond */
+p, li { font-size: 1.05rem; }
+strong, .subtitulo { font-weight: 600; }
+.em { font-style: italic; }
+
+/* --- Solo tarjeta (opcional) --- */
+.tarjeta { font-family: 'Cormorant Garamond', serif; }
+
+.tarjeta .nombres, .tarjeta h1 {
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-weight: 400;
+  font-size: clamp(54px, 9vw, 94px);
+  line-height: 1.02;
+  margin-bottom: .25rem;
+}
+
+.tarjeta .subtitulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 60px;
+  letter-spacing: .25px;
+}
+
+.tarjeta p { margin: .35rem 0; }
+
+/* Ajuste fino para móviles: reduce un poco para evitar cortes de trazos */
+@media (max-width: 360px) {
+  .tarjeta .nombres, .tarjeta h1 { font-size: clamp(46px, 10.5vw, 80px); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Contenido de la columna izquierda */
+.banner.with-card-left .content{
+  position: relative;
+  max-width: 680px;
+  margin-inline: auto;           /* centra el bloque dentro de la columna */
+  padding: 10rem 1.75rem;
+}
+
+/* PAPEL centrado (con bisel) */
+.banner.with-card-left .content::before{
+  --bleed: clamp(14px, 2vw, 22px);   /* “marco” extra a ambos lados */
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;                         /* ancla al centro */
+  transform: translateX(-50%);       /* centra exactamente */
+  top: -1.2rem;                         /* ajusta alto superior */
+  bottom: -0.8rem;                   /* ajusta alto inferior */
+  width: calc(100% + 2*var(--bleed));
+  border-radius: 10px;
+
+
+
+
+  /* Fondo + borde con degradé para bisel */
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.9)) border-box;
+  border: 34px solid transparent;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.10),
+    inset 0 2px 6px rgba(255,255,255,.55),
+    inset 0 -2px 6px rgba(0,0,0,.06),
+    inset 2px 0 6px rgba(255,255,255,.35),
+    inset -2px 0 6px rgba(0,0,0,.06);
+}
+
+/* controla el tamaño desde aquí */
+.banner.with-card-left .content { --flap-w: clamp(500px, 60vw, 1100px); }
+
+.banner.with-card-left .content::after{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10.0rem;
+  width: var(--flap-w);
+  height: calc(var(--flap-w) * 0.62);      /* flap del sobre */
+  background: url("/images/gallery/matri/sello.png") no-repeat top center / contain;
+  pointer-events: none;
+}
+
+/* Texto siempre por encima */
+.banner.with-card-left .content > *{ position: relative; z-index: 2; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
