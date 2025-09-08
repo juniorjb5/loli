@@ -684,43 +684,44 @@ strong, .subtitulo { font-weight: 600; }
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* Contenido de la columna izquierda */
+/* ===== Columna izquierda ===== */
 .banner.with-card-left .content{
   position: relative;
   max-width: 680px;
-  margin-inline: auto;           /* centra el bloque dentro de la columna */
-  padding: 10rem 1.75rem;
+  margin-inline: auto;
+  padding: 5rem 10.75rem;
+
+  /* Control del SOBRE (fondo) */
+  --env-w: clamp(700px, 64vw, 1280px);   /* tamaño del sobre (más grande) */
+  --env-x:  -20rem;                       /* desplazamiento horizontal: - más a la izquierda, + a la derecha */
+  --env-y:  -2rem;                       /* desplazamiento vertical:    - sube, + baja */
+
+  /* Fondo: SOBRE arriba a la izquierda */
+  background-image: url("/images/gallery/matri/sobre-bg.png");
+  background-repeat: no-repeat;
+  background-size: var(--env-w) auto;
+  background-position: left calc(var(--env-x)) top calc(var(--env-y));
 }
 
-/* PAPEL centrado (con bisel) */
+/* ===== PAPEL centrado pero corrido ↓→ (sale del sobre) ===== */
 .banner.with-card-left .content::before{
-  --bleed: clamp(14px, 2vw, 22px);   /* “marco” extra a ambos lados */
+  --bleed: clamp(5px, 2vw, 5px);   /* marco extra a los lados */
+  --paper-shift-x: 3rem;           /* + desplaza el papel a la derecha */
+  --paper-shift-y: 9rem;             /* + desplaza el papel hacia abajo  */
+
   content: "";
   position: absolute;
   z-index: 0;
-  left: 50%;                         /* ancla al centro */
-  transform: translateX(-50%);       /* centra exactamente */
-  top: -1.2rem;                         /* ajusta alto superior */
-  bottom: -0.8rem;                   /* ajusta alto inferior */
-  width: calc(100% + 2*var(--bleed));
+  left: calc(50% + var(--paper-shift-x));
+  transform: translateX(-50%);
+  top: var(--paper-shift-y);
+  bottom: 2.8rem;
+  width: calc(75% + 2*var(--bleed));
   border-radius: 10px;
 
-
-
-
-  /* Fondo + borde con degradé para bisel */
+  /* Bisel que ya venías usando */
   background:
-    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(#f3f1f4, #f1f2f2) padding-box,
     linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.9)) border-box;
   border: 34px solid transparent;
   box-shadow:
@@ -731,28 +732,23 @@ strong, .subtitulo { font-weight: 600; }
     inset -2px 0 6px rgba(0,0,0,.06);
 }
 
-/* controla el tamaño desde aquí */
-.banner.with-card-left .content { --flap-w: clamp(500px, 60vw, 1100px); }
-
+/* ===== SELLO (si quieres alinearlo con el borde del papel) ===== */
+.banner.with-card-left .content { --flap-w: clamp(400px, 60vw, 1100px); }
 .banner.with-card-left .content::after{
   content: "";
   position: absolute;
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
-  top: -10.0rem;
+  top: calc(var(--env-y) + 2.2rem);     /* ajústalo respecto al sobre */
   width: var(--flap-w);
-  height: calc(var(--flap-w) * 0.62);      /* flap del sobre */
+  height: calc(var(--flap-w) * 0.62);
   background: url("/images/gallery/matri/sello.png") no-repeat top center / contain;
   pointer-events: none;
 }
 
-/* Texto siempre por encima */
+/* Texto sobre todo */
 .banner.with-card-left .content > *{ position: relative; z-index: 2; }
-
-
-
-
 
 
 
