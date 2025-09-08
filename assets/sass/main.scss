@@ -684,42 +684,31 @@ strong, .subtitulo { font-weight: 600; }
 
 
 
-/* ===== Columna izquierda ===== */
+/* Contenido de la columna izquierda */
 .banner.with-card-left .content{
   position: relative;
   max-width: 680px;
-  margin-inline: auto;
-  padding: 5rem 10.75rem;
-
-  /* Control del SOBRE (fondo) */
-  --env-w: clamp(700px, 64vw, 1280px);   /* tamaño del sobre (más grande) */
-  --env-x:  -20rem;                       /* desplazamiento horizontal: - más a la izquierda, + a la derecha */
-  --env-y:  -2rem;                       /* desplazamiento vertical:    - sube, + baja */
-
-  /* Fondo: SOBRE arriba a la izquierda */
-  background-image: url("/images/gallery/matri/sobre-bg.png");
-  background-repeat: no-repeat;
-  background-size: var(--env-w) auto;
-  background-position: left calc(var(--env-x)) top calc(var(--env-y));
+  margin-inline: auto;           /* centra el bloque dentro de la columna */
+  padding: 6rem 1.75rem;
 }
 
-/* ===== PAPEL centrado pero corrido ↓→ (sale del sobre) ===== */
+/* PAPEL centrado (con bisel) */
 .banner.with-card-left .content::before{
-  --bleed: clamp(5px, 2vw, 5px);   /* marco extra a los lados */
-  --paper-shift-x: 3rem;           /* + desplaza el papel a la derecha */
-  --paper-shift-y: 9rem;             /* + desplaza el papel hacia abajo  */
-
+  --bleed: clamp(14px, 2vw, 22px);   /* “marco” extra a ambos lados */
   content: "";
   position: absolute;
   z-index: 0;
-  left: calc(50% + var(--paper-shift-x));
-  transform: translateX(-50%);
-  top: var(--paper-shift-y);
-  bottom: 2.8rem;
-  width: calc(75% + 2*var(--bleed));
+  left: 50%;                         /* ancla al centro */
+  transform: translateX(-50%);       /* centra exactamente */
+  top: -1.2rem;                         /* ajusta alto superior */
+  bottom: -0.8rem;                   /* ajusta alto inferior */
+  width: calc(100% + 2*var(--bleed));
   border-radius: 10px;
 
-  /* Bisel que ya venías usando */
+
+
+
+  /* Fondo + borde con degradé para bisel */
   background:
     linear-gradient(#f3f1f4, #f1f2f2) padding-box,
     linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,255,255,.9)) border-box;
@@ -732,28 +721,122 @@ strong, .subtitulo { font-weight: 600; }
     inset -2px 0 6px rgba(0,0,0,.06);
 }
 
-/* ===== SELLO (si quieres alinearlo con el borde del papel) ===== */
-.banner.with-card-left .content { --flap-w: clamp(400px, 60vw, 1100px); }
+/* controla el tamaño desde aquí */
+.banner.with-card-left .content { --flap-w: clamp(500px, 60vw, 1100px); }
+
 .banner.with-card-left .content::after{
   content: "";
   position: absolute;
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
-  top: calc(var(--env-y) + 2.2rem);     /* ajústalo respecto al sobre */
+  top: -7.5rem;
   width: var(--flap-w);
-  height: calc(var(--flap-w) * 0.62);
+  height: calc(var(--flap-w) * 0.62);      /* flap del sobre */
   background: url("/images/gallery/matri/sello.png") no-repeat top center / contain;
   pointer-events: none;
 }
 
-/* Texto sobre todo */
+/* Texto siempre por encima */
 .banner.with-card-left .content > *{ position: relative; z-index: 2; }
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1) Bajar el título */
+.banner.with-card-left h1{
+  margin-top: 2.2rem;                /* súbelo/bájalo cambiando este valor */
+}
+
+/* 2) Tamaño de textos */
+.banner.with-card-left p.major{       /* subtítulo */
+  font-size: clamp(24px, 2.1vw, 24px);
+  line-height: 1.8;
+  margin: 1.2rem 0 1.4rem;
+}
+.banner.with-card-left .content p:not(.major){  /* párrafos de cuerpo */
+  font-size: clamp(20px, 2.1vw, 24px);
+  line-height: 1.95;
+}
+
+/* 3A) Convertir el botón en fecha elegante (sin cambiar plantilla) */
+.banner.with-card-left .actions{
+  margin-top: 1.8rem;
+  text-align: center;
+}
+/*
+.banner.with-card-left .actions .button{
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  cursor: default;
+  pointer-events: none;           
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.6vw, 28px);
+  letter-spacing: .22em;          
+  color: #111;
+}
+*/
+
+/* (Opcional) separadores sutiles a los lados de la fecha */
+/*
+.banner.with-card-left .actions .button::before,
+.banner.with-card-left .actions .button::after{
+  content: "•";
+  margin: 0 .5em;
+  opacity: .35;
+  font-weight: 400;
+}
+*/
+
+
+
+.banner.with-card-left .content .fecha{
+  margin: 1.6rem 0 0;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 650;
+  font-size: clamp(24px, 2.6vw, 28px);
+  letter-spacing: .22em;
+  color: #111;
+}
 
 
 
